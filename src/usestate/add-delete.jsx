@@ -1,8 +1,8 @@
-import React, { useState } from "react";
-import React from 'react';
-function Usestate() {
-  const [dark, setDark] = useState(false);
-  const [plus, setPlus] = useState(0);
+import { useState } from "react";
+
+function Adddelete() {
+
+
 
   const [input, setInput] = useState("");
   const [todos, setTodos] = useState([]);
@@ -23,32 +23,11 @@ function Usestate() {
 
   return (
     <div
-      style={{
-        backgroundColor: dark ? "black" : "darkgray",
-        height: "100vh",
-        display: "flex",
-        flexDirection: "column",
-        justifyContent: "center",
-        alignItems: "center",
-        color: dark ? "white" : "black",
-        gap: "20px",
-      }}
+
     >
-      {/* Counter */}
-      <h1>COUNTER</h1>
 
-      <div>
-        <button onClick={() => setPlus(plus + 1)}>+</button>
 
-        <p>{plus}</p>
-
-        <button onClick={() => setPlus(plus - 1)}>-</button>
-      </div>
-
-      {/* Dark Mode */}
-      <button onClick={() => setDark(!dark)}>
-        Toggle
-      </button>
+     
 
       {/* Todo List */}
       <div>
@@ -79,4 +58,4 @@ function Usestate() {
   );
 }
 
-export default Usestate;
+export default Adddelete

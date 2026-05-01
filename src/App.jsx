@@ -1,9 +1,13 @@
-import React from 'react'
-import Usestate from './usestate'
+
+import Toggle from './usestate/toggle'
+import Increament from './usestate/increament'
+import Add from './usestate/add-delete'
 function App() {
   return (
     <div>
-      <Usestate/>
+    <Add />
+    <Increament/>
+    <Toggle/>
     </div>
   )
 }
