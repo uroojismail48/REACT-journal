@@ -9,22 +9,24 @@ import PrevValue from "./useRef/PrevValue";
 import Stopwatch from "./useRef/Stopwatch";
 import ThemeContext from './useContext/ThemeContext'
 import Language from "./useContext/LanguageContext";
-
+import Searchfilter from './Memo-Callback/Searchfilter';
+import Buttonrender from './Memo-Callback/Button-re-render'
 function App() {
   return (
     <div>
-      <Language />
+      {/* <Language />
       <Timer />
       <Apifetch/>
-<Inputauto/>
+ <Inputauto/>
 <PrevValue/>
       <PageTitle/>
 <Stopwatch/>
 <ThemeContext/> 
-    {/* <Add />
+    <Add />
     <Increament/>
-    <Toggle/> */}
-
+    <Toggle/>   */}
+<Searchfilter/>
+<Buttonrender />
     </div>
   )
 }
