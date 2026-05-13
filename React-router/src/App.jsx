@@ -4,10 +4,13 @@ import Footer from "./Components/Footer";
 import { createBrowserRouter, createRoutesFromElements, Route, RouterProvider } from "react-router-dom";
 import Home from './Components/Home';
 import Product from './Components/Product';
-import Contact from './Components/Contact';
+// import Contact from './Components/Contact';
 import About from './Components/About';
 import "./App.css";
 import RootLayout from "./Layout/RootLayout";
+import ContactLayout from "./Layout/ContactLayout";
+import ContactForm from "./Components/ContactForm";
+import ContactInfo from "./Components/ContactInfo";
 function App() {
   const router = createBrowserRouter(
     createRoutesFromElements(
@@ -15,7 +18,10 @@ function App() {
       <Route path='/' element={<RootLayout/>}>
         <Route path="/" element ={<Home/>} />
 <Route path="product" element = {<Product/>} />
-<Route path="contact" element ={<Contact/>} />
+<Route path="contact" element ={<ContactLayout/>}>
+<Route path='info' element={<ContactInfo/> } />
+<Route path='Form' element={<ContactForm />} />
+</Route>
 <Route path="About" element ={<About/>} />
       </Route>
     )

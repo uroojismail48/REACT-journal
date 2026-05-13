@@ -1,6 +1,7 @@
-import { Link, NavLink } from "react-router-dom";
+import { Link, NavLink , useNavigate} from "react-router-dom";
 
 function Header() {
+  const navigate = useNavigate();
   return (
     <div className="div">
 <h3>LOGO</h3>
@@ -15,7 +16,7 @@ function Header() {
         </li>
 
         <li>
-          <NavLink to="/contact">Contact</NavLink>
+          <NavLink to="/ContactLayout">Contact</NavLink>
         </li>
 
         <li>
@@ -23,7 +24,7 @@ function Header() {
         </li>
       </ul>
 
-      <button>Get Started</button>
+      <button onClick={() => navigate('/contact', {replace:true})}>Get Started </button>
     </div>
   );
 }
