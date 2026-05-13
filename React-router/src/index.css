@@ -3,7 +3,7 @@
   justify-content: space-between;
   align-items: center;
   padding: 15px 30px;
-  background: rgb(57, 106, 211);
+  background:rgb(5, 5, 75);
   font-weight:  500px;
 
   font-size: 20px;
@@ -18,7 +18,7 @@ ul {
 }
 
 a {
-   color: darkblue;
+   color: rgb(66, 66, 221);
   text-decoration: none;
 }
 
@@ -42,8 +42,11 @@ button{
   font-size: 15px;
     text-decoration: none;
     outline: none;
-    border: 2px solid navy;
+    border: 2px solid rgb(5, 5, 75);
    color: rgb(181, 161, 238);
     background-color: rgb(122, 122, 243);
     border-radius: 20px;
+}
+a.active{
+  color: white;
 }
