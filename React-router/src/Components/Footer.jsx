@@ -10,11 +10,11 @@ function Footer() {
 
 const styles = {
   footer: {
-    marginTop: "50px",
+    marginTop: "320px",
     padding: "15px",
     textAlign: "center",
-    backgroundColor: "rgb(5, 5, 75)",
-    color: "#7b96ec",
+    backgroundColor: "rgb(40, 40, 46)",
+    color: "#ffffff",
   },
 };
 

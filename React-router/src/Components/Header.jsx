@@ -16,9 +16,11 @@ function Header() {
         </li>
 
         <li>
-          <NavLink to="/ContactLayout">Contact</NavLink>
+          <NavLink to="/Contact">Contact</NavLink>
         </li>
-
+     <li>
+          <NavLink to="/jobs">JOBs</NavLink>
+        </li>
         <li>
           <Link to="/about">About</Link>
         </li>

@@ -11,6 +11,9 @@ import RootLayout from "./Layout/RootLayout";
 import ContactLayout from "./Layout/ContactLayout";
 import ContactForm from "./Components/ContactForm";
 import ContactInfo from "./Components/ContactInfo";
+import NotFound from "./Components/NotFound";
+import JobsLayout from "./Layout/JobsLayout";
+import Jobs, { JobsLoader } from "./Components/Jobs";
 function App() {
   const router = createBrowserRouter(
     createRoutesFromElements(
@@ -20,10 +23,17 @@ function App() {
 <Route path="product" element = {<Product/>} />
 <Route path="contact" element ={<ContactLayout/>}>
 <Route path='info' element={<ContactInfo/> } />
+   
 <Route path='Form' element={<ContactForm />} />
 </Route>
 <Route path="About" element ={<About/>} />
+
+<Route path="jobs" element={<JobsLayout/>}>
+  <Route index element={<Jobs/>} loader={JobsLoader}/>
+</Route>
+ <Route path='*' element={<NotFound/>} /> 
       </Route>
+  
     )
   );
   return (
