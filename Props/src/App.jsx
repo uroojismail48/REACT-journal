@@ -1,23 +1,30 @@
+import  { createContext } from "react"
 import BasicProp from "./types/BasicProp"
 import BooleanProp from "./types/BooleanProp"
 import ControlledProp from "./types/ControlledProp"
 import Destructuring from "./types/Destructuring"
 import ForwardRef from "./types/ForwardRef"
+import KeyProp from "./types/KeyProp"
+import PropTypes from "./types/PropTypes"
 import Middle from "./types/Propdrilling/Middle"
 import RefProp from "./types/RefProp"
 import RenderProp from "./types/RenderProp"
 import RestProp from "./types/RestProp"
 import SpreadProp from "./types/SpreadProp"
 import UncontrolledProp from "./types/UncontrolledProp"
+import Deepchild from "./types/context/Deepchild"
 import Layout from "./types/layoutProp/Layout"
+const ThemeContext = createContext()
+
 function App() {
     const username="Urooj"
   return (
 
 
     <div className="aa">
+       
         <div className="propdrillig">
-        
+      
             <Middle username={username}/>
         </div>
  
@@ -36,6 +43,7 @@ function App() {
 <ForwardRef/>
 <ControlledProp/>
 <br />
+<PropTypes title="Inception" rating={9.2} released={true} />
 <RenderProp
 render={({
     x,y
@@ -63,7 +71,10 @@ content={<p>Main content here</p>}
      <BooleanProp
 disabled={true}
 />
-   
+   <KeyProp/>
+    <ThemeContext.Provider value="dark">
+     <Deepchild/>
+    </ThemeContext.Provider>
     </div>
   )
  }
