@@ -1,5 +1,6 @@
 import  { createContext } from "react"
-import BasicProp from "./types/BasicProp"
+
+ import BasicProp from "./types/BasicProp"
 import BooleanProp from "./types/BooleanProp"
 import ControlledProp from "./types/ControlledProp"
 import Destructuring from "./types/Destructuring"
@@ -15,18 +16,23 @@ import UncontrolledProp from "./types/UncontrolledProp"
 import Deepchild from "./types/context/Deepchild"
 import Layout from "./types/layoutProp/Layout"
 import MemoizedProp from "./types/MemoizedProp"
-const ThemeContext = createContext()
+const ThemeContext = createContext() 
 
 function App() {
-    const username="Urooj"
+
+    const username="Urooj" 
   return (
 
 
+
     <div className="aa">
-       
+ <div className="a">
+
+  
+    </div>
         <div className="propdrillig">
-      
-            <Middle username={username}/>
+     
+            <Middle username={username}j/>
         </div>
  
     <SpreadProp/>
@@ -79,7 +85,7 @@ disabled={true}
      <Deepchild/>
     </ThemeContext.Provider>
 
-    <MemoizedProp/>
+    <MemoizedProp/> 
     </div>
   )
  }
