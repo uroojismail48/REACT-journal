@@ -14,6 +14,7 @@ import SpreadProp from "./types/SpreadProp"
 import UncontrolledProp from "./types/UncontrolledProp"
 import Deepchild from "./types/context/Deepchild"
 import Layout from "./types/layoutProp/Layout"
+import MemoizedProp from "./types/MemoizedProp"
 const ThemeContext = createContext()
 
 function App() {
@@ -37,6 +38,8 @@ function App() {
     placeholder="Enter your username"
     minlength={20}
 />
+<br />
+
 <br />
 <RefProp/>
 <br />
@@ -75,6 +78,8 @@ disabled={true}
     <ThemeContext.Provider value="dark">
      <Deepchild/>
     </ThemeContext.Provider>
+
+    <MemoizedProp/>
     </div>
   )
  }
