@@ -12,11 +12,11 @@
 // import Searchfilter from './Memo-Callback/Searchfilter';
 // import Buttonrender from './Memo-Callback/Button-re-render'
 
-import Simple_counter from "./useReducer/Simple_counter";
+// import Simple_counter from "./useReducer/Simple_counter";
 
 function App() {
   return (
-    <div>
+    <div >
       {/* <Language />
       <Timer />
       <Apifetch/>
@@ -30,7 +30,8 @@ function App() {
     <Toggle/>   
 <Searchfilter/>
 <Buttonrender /> */}
-<Simple_counter/>
+      {/* <Simple_counter/> */}
+      
     </div>
   )
 }
