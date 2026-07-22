@@ -10,7 +10,7 @@ export const enhancedApi = async (file) => {
     const taskId = await uploadImage(file);
     console.log("Task ID:", taskId);
 
-    const enhancedImage = await fetchImage(taskId);
+    const enhancedImage = await poll(taskId);
 
     return enhancedImage;
   } catch (error) {
@@ -48,6 +48,26 @@ const fetchImage = async (taskId) => {
       },
     }
   );
-console.log("Task ID:", taskId);
-  return response.data;
+    if (!response?.data?.image) {
+    throw new Error ("Fetch To Fetch") 
+}  console.log(response.data.image)
+  return response.data.image;
+
 };
+
+const poll = async(taskId , retires = 0) => 
+{
+    const result = await fetchImage(taskId)
+    if(result.state === 4)
+    {
+        console.log("processing...")
+
+ 
+    if (retires >= 20) {
+        throw new Error ("MAX Has Reached")
+    }
+    await new Promise ((resolve) => setTimeout(resolve, 2000))
+        return poll(taskId, retires + 1);
+       }
+       return result;
+}
