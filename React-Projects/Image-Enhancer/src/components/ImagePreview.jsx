@@ -1,4 +1,6 @@
 
+import Loading from "./Loading";
+
 function ImagePreview(props) {
   return (
     <div className="mt-8 grid grid-cols-1 md:grid-cols-2 gap-1 w-full  max-w-4xl">
@@ -23,19 +25,26 @@ function ImagePreview(props) {
         <h2 className="text-xl font-bold text-center    bg-gray-900  text-gray-200 py-2">
           Enchanced image
         </h2>
-        {props.upload ? (
+        {props.enhanced && !props.loading && (
           <img
-            src={props.upload}
+            src={props.enhanced}
             className="w-full h-full  object-cover "
             alt=""
           />
-        ) : (
-          <div className="w-full bg-gray-500 flex justify-center items-center  h-80">
-            No img selected
-          </div>
         )}
+        {props.loading ? 
+        <Loading />
+         : (
+          <div className="w-full bg-gray-500 flex justify-center items-center  h-80">
+            No Enhanced Yet
+          </div>
+          )}
+
       </div>
+
     </div>
+
+
   );
 }
 

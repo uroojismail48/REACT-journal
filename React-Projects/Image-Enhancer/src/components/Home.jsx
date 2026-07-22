@@ -1,6 +1,8 @@
 import { useState } from "react"
 import ImagePreview from "./ImagePreview"
 import ImageUpload from "./ImageUpload"
+import { enhancedApi } from "../../utilities/enhancedApi"
+
 
 function Home() {
     const [uploadImage, setUploadImage] = useState(null)
@@ -10,9 +12,19 @@ function Home() {
 
 
 
- const handleImageUpload = (files) => {
-   setUploadImage(URL.createObjectURL(files));
-   setLoading(true);
+ const handleImageUpload = async(file) => {
+   setUploadImage(URL.createObjectURL(file));
+     setLoading(true);
+     try {
+         const enhancedURL = await enhancedApi(file);
+         setEnhanced(enhancedURL);
+         setLoading(false);
+   
+     } catch (error) {
+         console.log(error)
+         alert("Error aagya")
+   }
+     
  };
     return (
         <>
@@ -22,6 +34,7 @@ function Home() {
                 enhanced={enhanced}
                 loading={loading}
             />
+       
         </>
     );
 }
