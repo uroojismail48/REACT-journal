@@ -48,26 +48,28 @@ const fetchImage = async (taskId) => {
       },
     }
   );
-    if (!response?.data?.image) {
-    throw new Error ("Fetch To Fetch") 
-}  console.log(response.data.image)
-  return response.data.image;
 
+  return response.data;
 };
 
-const poll = async(taskId , retires = 0) => 
-{
-    const result = await fetchImage(taskId)
-    if(result.state === 4)
-    {
-        console.log("processing...")
+const poll = async (taskId, retries = 0) => {
+  const result = await fetchImage(taskId);
 
- 
-    if (retires >= 20) {
-        throw new Error ("MAX Has Reached")
-    }
-    await new Promise ((resolve) => setTimeout(resolve, 2000))
-        return poll(taskId, retires + 1);
-       }
-       return result;
-}
+  console.log(result);
+
+  // Image ready
+  if (result.data?.image) {
+    return result.data.image;
+  }
+
+  // Max retries
+  if (retries >= 20) {
+    throw new Error("Timeout");
+  }
+
+  console.log("Processing...");
+
+  await new Promise((resolve) => setTimeout(resolve, 2000));
+
+  return poll(taskId, retries + 1);
+};

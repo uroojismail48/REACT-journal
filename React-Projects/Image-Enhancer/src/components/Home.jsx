@@ -15,16 +15,18 @@ function Home() {
  const handleImageUpload = async(file) => {
    setUploadImage(URL.createObjectURL(file));
      setLoading(true);
-     try {
-         const enhancedURL = await enhancedApi(file);
-         setEnhanced(enhancedURL);
-         setLoading(false);
-   
-     } catch (error) {
-         console.log(error)
-         alert("Error aagya")
-   }
-     
+try {
+ const enhancedURL = await enhancedApi(file);
+
+  if (enhancedURL) {
+    setEnhanced(enhancedURL);
+  }
+} catch (error) {
+  console.log(error);
+  alert("Error aa gaya");
+} finally {
+  setLoading(false);
+}
  };
     return (
         <>
