@@ -25,25 +25,36 @@ function Products() {
     }, [count])
 
     if (loading) {
-        return <div className="h-10 w-10 rounded-full border border-black animate-spin border-t-transparent"></div>
+        return (
+            <div className="flex   justify-center  items-center h-screen w-full border border-red-700">
+             
+                <div className="h-10 w-10 rounded-full border border-black animate-spin border-t-transparent"></div>{" "}
+            </div>
+        );
     }
 
     return (
-        <div className=" w-full border ">
-            <div className="pro flex justify-around">
-                {products && products.length ? products.map(item =>
-                    <div key={item.id}>
-                        <img
-                            src={item.thumbnail}
-                            className="img-fluid rounded-top"
-                            alt={item.title}
-                        />
-                        <p>{item.title}</p>
-                    </div>
-                ) : null}
-            </div>
+      <div className=" w-full h-300 flex  flex-col justify-center items-center ">
+        <div className="w-full h-full gap-4 p-4 flex-wrap flex justify-center ">
+          {products && products.length
+            ? products.map((item) => (
+                <div className="border border-black w-50 p-2" key={item.id}>
+                  <img
+                    src={item.thumbnail}
+                    className="img-fluid rounded-top"
+                    alt={item.title}
+                  />
+                  <p>{item.title}</p>
+                </div>
+              ))
+            : null}
         </div>
-    )
+
+        <div className=""> 
+          <button className="border-4 border-black p-2 text-center font-bold font-medium" onClick={() => setCount(count + 1)}>Load More</button>
+        </div>
+      </div>
+    );
 }
 
 export default Products
