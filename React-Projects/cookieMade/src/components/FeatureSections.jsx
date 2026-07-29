@@ -30,8 +30,7 @@ function FeatureSections() {
   </button>
             )}
 </div>
-      <div className="grid grid-cols-5 gap-1 ">
-        {recipes.slice(0,5).map((meal) => (
+<div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-4">        {recipes.slice(0,5).map((meal) => (
           <div key={meal.idMeal} className="border 
 relative
           rounded-b-md border-3 border-orange-400
