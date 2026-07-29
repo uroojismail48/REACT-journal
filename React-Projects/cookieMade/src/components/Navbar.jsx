@@ -3,10 +3,10 @@ function Navbar() {
   return (
     <div>
        <div className="w-full bg-amber-600 h-15 flex p-3
-   fixed
+   fixed z-1000
        text-white font-bold justify-between items-center">
     <div className="left flex items-center">
-        <h1>LOGO</h1>
+        <h1 className="font-bold font-mono text-2xl space-1">CookieMade🍪</h1>
         
     </div>
 <div className="right flex items-center justify-between gap-6">

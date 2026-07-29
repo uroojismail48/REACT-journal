@@ -1,30 +1,33 @@
-import { useEffect } from "react"
-import Navbar  from './components/Navbar'
-import Main from "./components/Main"
-import FeatureSections from "./components/FeatureSections"
-import RecipeBy from "./components/RecipeBy"
-function App() {
+import { Routes, Route } from "react-router-dom";
+import Navbar from "./components/Navbar";
+import Main from "./components/Main";
+import FeatureSections from "./components/FeatureSections";
+import RecipeBy from "./components/RecipeBy";
+import RecipeDetails from "./page/RecipeDetails";
 
-async function fetchData(){
-  const data = await fetch("https://www.themealdb.com/api/json/v1/1/random.php")
-const response = await data.json()
-
-
-}
-useEffect(() => 
-{
-fetchData()
-},[])
+function Home() {
   return (
-    <div className="h-screen w-full bg-orange-100 text-black ">
-<Navbar/>
-<div className="px-4">
-<Main/>
-<FeatureSections/>
-<RecipeBy/>
-    </div>
-    </div>
-  )
+    <>
+      <Main />
+      <FeatureSections />
+      <RecipeBy />
+    </>
+  );
 }
 
-export default App
+function App() {
+  return (
+    <div className="min-h-screen w-full bg-orange-100 text-black">
+      <Navbar />
+
+      <div className="px-4">
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/recipe/:id" element={<RecipeDetails />} />
+        </Routes>
+      </div>
+    </div>
+  );
+}
+
+export default App;
